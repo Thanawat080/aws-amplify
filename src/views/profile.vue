@@ -18,7 +18,7 @@
                     <p>
                         <b>Follow :</b> {{ countfollow }}
                     </p>
-                    <button type="button" class="btn btn-primary" v-if="useridfromlink != userid" @click="follow()">
+                    <button type="button" class="btn btn-primary" v-if="useridfromlink != userid && useridfromlink != ''" @click="follow()">
                         {{ textfollow }}
                     </button>
                 </center>
