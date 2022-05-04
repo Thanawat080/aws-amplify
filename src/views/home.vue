@@ -219,7 +219,8 @@ export default {
                         withCredentials: false
                     })
                     .then((res) => {
-                        this.user = res.data.Items;
+                      console.log(res.data)
+                        this.user = res.data;
                     })
                     .catch((err) => {
                         console.log(err);
