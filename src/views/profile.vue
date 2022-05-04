@@ -18,7 +18,7 @@
                     <p>
                         <b>Follow :</b> {{ countfollow }}
                     </p>
-                    <button type="button" class="btn btn-primary" v-if="useridfromlink == userid" @click="follow()">
+                    <button type="button" class="btn btn-primary" v-if="useridfromlink != userid" @click="follow()">
                         {{ textfollow }}
                     </button>
                 </center>
@@ -248,7 +248,7 @@ export default {
                     this.first_name = res.data.Item.first_name;
                     this.last_name = res.data.Item.last_name;
                     this.phone_number = res.data.Item.phone_number;
-                    this.userid = res.data.Item.id;
+                    this.userid = localStorage.getItem("id");
                     this.email = res.data.Item.email;
                     this.sick = res.data.Item.sick;
                     this.height = res.data.Item.height;
