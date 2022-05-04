@@ -56,7 +56,7 @@
                     <div class="alert" role="alert" style="background-color: #ecbca2;">
                         <div class="row">
                             <div class="col-10">
-                                <b><span class="badge bg-danger">USERNAME</span> {{ value.user_name }}</b>
+                                <b><span class="badge bg-danger">USERNAME</span> {{ value.first_name }}</b>
                             </div>
                         </div>
                     </div>
