@@ -27,7 +27,7 @@
       <div class="row" v-for="(value, index) in allcomment" :key="index">
         <div class="col-1">
           <img
-            src="https://bahmansport.com/media/com_store/images/empty.png"
+            :src=value.imguser
             style="width: 70px; height: 70px; border-radius: 360px;"
           />
         </div>
@@ -159,7 +159,8 @@ export default {
       countlike: 0,
       allreport: [],
       reportmodel: '',
-      img: ''
+      img: '',
+      imguser:''
     }
   },
   methods: {
@@ -182,6 +183,7 @@ export default {
         userid: localStorage.getItem('id'),
         comment: this.comment,
         email: this.email,
+        imguser:this.imguser
       })
       axios
         .put('https://ou03vrids2.execute-api.us-east-1.amazonaws.com/comment/' + this.$route.params.id, {
@@ -283,6 +285,7 @@ export default {
     axios
       .get('https://l5r8hpbor7.execute-api.us-east-1.amazonaws.com/specificuser/' + localStorage.getItem('id'),{withCredentials: false})
       .then((res) => {
+        this.imguser = res.data.Item.img
         this.first_name = res.data.Item.first_name
         this.last_name = res.data.Item.last_name
         this.phone_number = res.data.Item.phone_number
